@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Малафеев Александр</title>
+
+    <link href="css/all.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Css3 button generator</h1>
+
+        <div class="options">
+            <h2>Options</h2>
+            <ul class="options__list">
+                <li class="options__item">
+                    <div class="options__label"></div>
+                    <div class="options__input otions__input--slider"></div>
+                </li>
+                <li class="options__item">
+                    <div class="options__label"></div>
+                    <div class="options__input otions__input--slider"></div>
+                </li>
+                <li class="options__item">
+                    <div class="options__label"></div>
+                    <div class="options__input"></div>
+                </li>
+            </ul>
+        </div>
+        <!--end options-->
+        
+        <div class="result">
+            <h2>Result</h2>
+            <div class="result__container">
+                <button class="result__btn">Button text</button>
+            </div>
+        </div>
+        <!--end result-->
+
+        <div class="output">
+            <form action="POST" class="output__form">
+                <textarea name="html" cols="30" rows="10" placeholder="HTML code"></textarea>
+                <textarea name="html" cols="30" rows="10" placeholder="CSS code"></textarea>
+                <input type="email" placeholder="mail">
+                <button class="output__submit">Submit</button>
+            </form>
+        </div>
+        <!--end output-->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/all.min.js"></script>
+</body>
+
+</html>
