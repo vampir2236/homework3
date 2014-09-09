@@ -1,9 +1,12 @@
 @import url(mixins.less);
 
+
+/*общие*/
 *,
 *:before,
 *:after {
     box-sizing: border-box;
+    /*transition: all .2s;*/
 }
 
 body,
@@ -15,7 +18,16 @@ html {
 body {
     background-color: #ececec;
     background-image: url(../img/body-bg.png);
+    font: normal 16px "Open Sans", sans-serif;
     padding: 10px;
+}
+
+input,
+textarea {
+    color: #727272;
+    display: block;
+    font-size: .75em;
+    padding: 4px;
 }
 
 .wrapper {
@@ -24,21 +36,245 @@ body {
     box-shadow: 0 0 10px #999;
     margin: 0 auto;
     min-height: 100%;
+    max-width: 1000px;
     padding: 10px;
-    width: 1000px;
 }
 
+.title {
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header-title {
+    margin: 1.020% 0 2.551%;
+    font-size: 1.5em;
+    .title
+}
+
+.main {
+    margin-bottom: 1.530%;
+    .clearfix
+}
+
+
+/*блок опций*/
 .options {
     float: left;
     width: 50%;
+
+    &__title {
+        font-size: 1.125em;
+        margin-bottom: 5.521%;
+        .title
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item {
+        margin-bottom: 5.521%;
+        padding: 0 9.202%;
+        .clearfix
+    }
+
+    &__label {
+        float: left;
+        font-size: 1.125em;
+        text-align: right;
+        width: 32.500%;
+    }
+
+    &__input {
+        float: left;
+        margin-left: 27px;
+        width: 52.500%;
+    }
 }
 
+
+/*слайдер js*/
+.ui-slider {
+    background-color: #7e7e7e;
+    border-radius: 30px;
+    height: 9px;
+    margin-top: 2.5%;
+    position: relative;
+}
+
+.ui-slider-range {
+    background-color: #2b91d8;
+    background-image: linear-gradient(to bottom, #3a98d9, #2a88c9);
+    border: 1px solid #1f5b85;
+    border-radius: 30px;
+    height: 100%;
+}
+
+.ui-slider-handle {
+    background-image: url(../img/slider-handle.png);
+    display: block;
+    height: 23px;
+    margin-left: -15px;
+    position: absolute;
+    top: -8px;
+    width: 23px;
+}
+
+
+/*блок результата*/
 .result {
+    border-left: 1px solid #a1a1a1;
     float: left;
+    min-height: 235px;
+    padding: 0 6.993% 6.993%;
     width: 50%;
+
+    &__title {
+        font-size: 1.125em;
+        margin-bottom: 18.465%;
+        .title
+    }
+
+    &__btn {
+        color: #fff;
+        background-color: #37a1e4;
+        background-image: linear-gradient(to bottom, #77bfed, #4baae6);
+        border: 1px solid #3181b4;
+        border-radius: 5px;
+        box-shadow: 0 1px 2px #999,
+                    inset 0 1px 2px #fff;
+        display: block;
+        font-size: .875em;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 12px 27px;
+        text-shadow: 0 0px 1px #333;
+
+        &:hover {
+            box-shadow: 0 1px 3px #333,
+                    inset 0 1px 2px #fff;
+        }
+
+        &:active {
+            box-shadow: 0 1px 2px #fff,
+                        inset 0 1px 2px #999;
+            background-image: linear-gradient(to top, #77bfed, #4baae6);
+        }
+    }
 }
 
+
+/*блок с выходной информацией*/
 .output {
-    clear: both;
-    width: 100%;
+    border-top: 1px dashed #a1a1a1;
+    margin: 0 2.127%;
+    padding-top: 5.102%;
+    width: 95.918%;
+
+    &__form {
+        margin: 0 25.531%;
+    }
+
+    &__wrap {
+        margin: 0 0 0 -4.166%;
+        .clearfix
+    }
+
+    &__col {
+        float: left;
+        min-height: 110px;
+        margin: 0 0 3.125% 4.166%;
+        resize: none;
+        width: 45.833%;
+    }
+
+    &__email {
+        clear: both;
+        margin: 0 auto 3.260%;
+        width: 47.826%;
+    }
+
+    &__submit {
+        background-color: #3b8e31;
+        background-image: linear-gradient(to bottom, #93cb8b, #60b355);
+        border: 1px solid #3b8e31;
+        border-radius: 30px;
+        box-shadow: 0 1px 2px #999,
+                    inset 0 1px 2px #fff;
+        color: #fff;
+        display: block;
+        font-size: .875em;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 8px 30px;
+        text-shadow: 0 0px 1px #333;
+
+        &:hover {
+            box-shadow: 0 1px 3px #333,
+                    inset 0 1px 2px #fff;
+        }
+
+        &:active {
+            box-shadow: 0 1px 2px #fff,
+                        inset 0 1px 2px #999;
+            background-image: linear-gradient(to top, #93cb8b, #60b355);
+        }
+    }
+}
+
+
+/* адаптив */
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .options{
+        width: 100%;
+
+        &__item {
+            padding: 0 2%;
+        }
+    }
+
+    .result {
+        border: none;
+        border-top: 1px dashed #a1a1a1;
+        min-height: 0;
+        width: 100%;
+
+        &__title {
+            margin-bottom: 5%;
+        }
+    }
+
+    .output {
+        &__form {
+            margin: 0 5%;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .output {
+        &__wrap {
+            margin-left: 0;
+        }
+
+        &__col {
+            margin-left: 0;
+            width: 100%
+        }
+
+        &__email {
+            width: 100%;
+        }
+    }
 }

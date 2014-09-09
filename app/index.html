@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Малафеев Александр</title>
 
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link href="css/all.min.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -17,47 +18,53 @@
 
 <body>
     <div class="wrapper">
-        <h1>Css3 button generator</h1>
+        <h1 class="header-title">Css3 button generator</h1>
 
-        <div class="options">
-            <h2>Options</h2>
-            <ul class="options__list">
-                <li class="options__item">
-                    <div class="options__label"></div>
-                    <div class="options__input otions__input--slider"></div>
-                </li>
-                <li class="options__item">
-                    <div class="options__label"></div>
-                    <div class="options__input otions__input--slider"></div>
-                </li>
-                <li class="options__item">
-                    <div class="options__label"></div>
-                    <div class="options__input"></div>
-                </li>
-            </ul>
-        </div>
-        <!--end options-->
-        
-        <div class="result">
-            <h2>Result</h2>
-            <div class="result__container">
-                <button class="result__btn">Button text</button>
+        <div class="main">
+            <!--блок опций-->
+            <div class="options">
+                <h2 class="options__title">Options</h2>
+                <ul class="options__list">
+                    <li class="options__item">
+                        <div class="options__label">Border-radius</div>
+                        <div id="js-border-radius" class="options__input options__input--slider"></div>
+                    </li>
+                    <li class="options__item">
+                        <div class="options__label">Border-size</div>
+                        <div id="js-border-size" class="options__input options__input--slider"></div>
+                    </li>
+                    <li class="options__item">
+                        <div class="options__label">Text</div>
+                        <input id="js-btn-text" class="options__input" type="text" placeholder="Button text" value="Button text">
+                    </li>
+                </ul>
+            </div>
+
+
+            <!--блок результата-->
+            <div class="result">
+                <h2 class="result__title">Result</h2>
+                <div class="result__container">
+                    <button id="#js-result-btn" class="result__btn">Button text</button>
+                </div>
             </div>
         </div>
-        <!--end result-->
 
+        <!--блок выходной информации-->
         <div class="output">
             <form action="POST" class="output__form">
-                <textarea name="html" cols="30" rows="10" placeholder="HTML code"></textarea>
-                <textarea name="html" cols="30" rows="10" placeholder="CSS code"></textarea>
-                <input type="email" placeholder="mail">
+                <div class="output__wrap">
+                    <textarea class="output__col" name="html" placeholder="HTML code" readonly></textarea>
+                    <textarea class="output__col" name="css" placeholder="CSS code" readonly></textarea>
+                </div>
+                <input class="output__email" type="email" placeholder="mail">
                 <button class="output__submit">Submit</button>
             </form>
         </div>
-        <!--end output-->
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <script src="js/all.min.js"></script>
 </body>
 
