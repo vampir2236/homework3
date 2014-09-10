@@ -31,11 +31,11 @@
                     </li>
                     <li class="options__item">
                         <div class="options__label">Border-size</div>
-                        <div id="js-border-size" class="options__input options__input--slider"></div>
+                        <div id="js-border-width" class="options__input options__input--slider"></div>
                     </li>
                     <li class="options__item">
                         <div class="options__label">Text</div>
-                        <input id="js-btn-text" class="options__input" type="text" placeholder="Button text" value="Button text">
+                        <input id="js-btn-text" class="options__input" type="text" value="Button text">
                     </li>
                 </ul>
             </div>
@@ -45,7 +45,7 @@
             <div class="result">
                 <h2 class="result__title">Result</h2>
                 <div class="result__container">
-                    <button id="#js-result-btn" class="result__btn">Button text</button>
+                    <button id="js-result-btn" class="result__btn">Button text</button>
                 </div>
             </div>
         </div>
@@ -54,8 +54,8 @@
         <div class="output">
             <form action="POST" class="output__form">
                 <div class="output__wrap">
-                    <textarea class="output__col" name="html" placeholder="HTML code" readonly></textarea>
-                    <textarea class="output__col" name="css" placeholder="CSS code" readonly></textarea>
+                    <textarea id="js-output-html" class="output__col" name="html" placeholder="HTML code" readonly></textarea>
+                    <textarea id="js-output-css" class="output__col" name="css" placeholder="CSS code" readonly></textarea>
                 </div>
                 <input class="output__email" type="email" placeholder="mail">
                 <button class="output__submit">Submit</button>

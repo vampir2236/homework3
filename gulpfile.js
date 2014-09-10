@@ -20,6 +20,7 @@
             .on('error', function () {
                 console.log('Ошибка в задаче less!');
             })
+            .pipe(prefixer('last 3 versions', 'ie >= 8'))
             .pipe(gulp.dest('./source/css'))
             .pipe(notify('less  Ok!'));
     });
@@ -33,7 +34,7 @@
             .on('error', function () {
                 console.log('Ошибка в задаче css!');
             })
-            .pipe(prefixer())
+            .pipe(prefixer('last 2 versions'))
             .pipe(minifyCss())
             .pipe(rename({
                 suffix: '.min'
@@ -46,9 +47,13 @@
     /* js */
     gulp.task('js', function () {
         gulp.src(['./bower_components/bootstrap/dist/js/bootstrap.min.js',
+                './bower_components/jquery-placeholder/jquery.placeholder.js',
                 './source/js/main.js'])
             .pipe(concat('all.js'))
             .pipe(uglify())
+            .on('error', function () {
+                console.log('Ошибка в задаче js!');
+            })
             .pipe(rename({
                 suffix: '.min'
             }))

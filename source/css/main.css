@@ -117,6 +117,7 @@ textarea {
 }
 .ui-slider-range {
   background-color: #2b91d8;
+  background-image: -webkit-linear-gradient(top, #3a98d9, #2a88c9);
   background-image: linear-gradient(to bottom, #3a98d9, #2a88c9);
   border: 1px solid #1f5b85;
   border-radius: 30px;
@@ -149,6 +150,7 @@ textarea {
 .result__btn {
   color: #fff;
   background-color: #37a1e4;
+  background-image: -webkit-linear-gradient(top, #77bfed, #4baae6);
   background-image: linear-gradient(to bottom, #77bfed, #4baae6);
   border: 1px solid #3181b4;
   border-radius: 5px;
@@ -160,6 +162,8 @@ textarea {
   margin: 0 auto;
   padding: 12px 27px;
   text-shadow: 0 0px 1px #333;
+  /* ie fix */
+  behavior: url("border-radius.htc");
 }
 .result__btn:hover {
   box-shadow: 0 1px 3px #333,
@@ -168,6 +172,7 @@ textarea {
 .result__btn:active {
   box-shadow: 0 1px 2px #fff,
                         inset 0 1px 2px #999;
+  background-image: -webkit-linear-gradient(bottom, #77bfed, #4baae6);
   background-image: linear-gradient(to top, #77bfed, #4baae6);
 }
 /*блок с выходной информацией*/
@@ -205,6 +210,7 @@ textarea {
 }
 .output__submit {
   background-color: #3b8e31;
+  background-image: -webkit-linear-gradient(top, #93cb8b, #60b355);
   background-image: linear-gradient(to bottom, #93cb8b, #60b355);
   border: 1px solid #3b8e31;
   border-radius: 30px;
@@ -217,6 +223,8 @@ textarea {
   margin: 0 auto;
   padding: 8px 30px;
   text-shadow: 0 0px 1px #333;
+  /*ie fix*/
+  behavior: url(border-radius.htc);
 }
 .output__submit:hover {
   box-shadow: 0 1px 3px #333,
@@ -225,6 +233,7 @@ textarea {
 .output__submit:active {
   box-shadow: 0 1px 2px #fff,
                         inset 0 1px 2px #999;
+  background-image: -webkit-linear-gradient(bottom, #93cb8b, #60b355);
   background-image: linear-gradient(to top, #93cb8b, #60b355);
 }
 /* адаптив */
