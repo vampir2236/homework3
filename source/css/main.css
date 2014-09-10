@@ -162,8 +162,6 @@ textarea {
   margin: 0 auto;
   padding: 12px 27px;
   text-shadow: 0 0px 1px #333;
-  /* ie fix */
-  behavior: url("border-radius.htc");
 }
 .result__btn:hover {
   box-shadow: 0 1px 3px #333,
@@ -223,8 +221,6 @@ textarea {
   margin: 0 auto;
   padding: 8px 30px;
   text-shadow: 0 0px 1px #333;
-  /*ie fix*/
-  behavior: url(border-radius.htc);
 }
 .output__submit:hover {
   box-shadow: 0 1px 3px #333,
@@ -262,7 +258,7 @@ textarea {
 }
 @media only screen and (max-width: 480px) {
   body {
-    font-size: 12px;
+    padding: 0;
   }
   .output__wrap {
     margin-left: 0;
