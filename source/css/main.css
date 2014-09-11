@@ -160,6 +160,7 @@ textarea {
   font-size: .875em;
   font-weight: bold;
   margin: 0 auto;
+  max-width: 100%;
   padding: 12px 27px;
   text-shadow: 0 0px 1px #333;
 }
@@ -258,7 +259,10 @@ textarea {
 }
 @media only screen and (max-width: 480px) {
   body {
-    padding: 0;
+    padding: 2px;
+  }
+  .wrapper {
+    padding: 5px 3px;
   }
   .output__wrap {
     margin-left: 0;

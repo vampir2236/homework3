@@ -1,0 +1,7 @@
+{
+    "name": "loftschool/homework3",
+    "require": {
+        "phpmailer/phpmailer": "v5.2.8",
+        "smarty/smarty": "v3.1.19"
+    }
+}

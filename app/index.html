@@ -52,13 +52,13 @@
 
         <!--блок выходной информации-->
         <div class="output">
-            <form action="POST" class="output__form">
+            <form id="js-form" class="output__form">
                 <div class="output__wrap">
-                    <textarea id="js-output-html" class="output__col" name="html" placeholder="HTML code" readonly></textarea>
-                    <textarea id="js-output-css" class="output__col" name="css" placeholder="CSS code" readonly></textarea>
+                    <textarea id="js-output-html" class="output__col" name="html" readonly></textarea>
+                    <textarea id="js-output-css" class="output__col" name="css" readonly></textarea>
                 </div>
-                <input class="output__email" type="email" placeholder="mail">
-                <button class="output__submit">Submit</button>
+                <input id="js-email" class="output__email" type="email" name="email" placeholder="mail" required>
+                <button type="submit" class="output__submit">Submit</button>
             </form>
         </div>
     </div>

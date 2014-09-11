@@ -62,6 +62,10 @@
     });
 
 
+    /* копирование файлов при старте gulp */
+    gulp.task('copy', function () {});
+
+
     /* watch */
     gulp.task('watch', function () {
         gulp.watch('./source/less/main.less', ['less']);
@@ -70,6 +74,6 @@
     });
 
 
-    gulp.task('default', ['watch']);
+    gulp.task('default', ['watch', 'copy']);
 
 })();
