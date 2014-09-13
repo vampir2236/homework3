@@ -123,36 +123,36 @@
         },
 
         generateHTML: function () {
-            this.$outputHTML.text('<button type="button" class="btn">\n\t' + this.$btnText.val() + '\n</button>');
+            this.$outputHTML.text('<button type="button" class="btn">\r\n\t' + this.$btnText.val() + '\r\n</button>');
         },
 
         generateCSS: function () {
             this.$outputCSS.text(
                 '.btn {' +
-                '\n\tcolor: #fff;' +
-                '\n\tbackground-color: #37a1e4;' +
-                '\n\tbackground-image: -webkit-linear-gradient(top, #77bfed, #4baae6);' +
-                '\n\tbackground-image: linear-gradient(to bottom, #77bfed, #4baae6);' +
-                '\n\tborder: ' + this.bw + 'px solid #3181b4;' +
-                '\n\tborder-radius: ' + this.br + 'px;' +
-                '\n\tbox-shadow: 0 1px 2px #999,' +
-                '\n\t\tinset 0 1px 2px #fff;' +
-                '\n\tdisplay: block;' +
-                '\n\tfont-size: .875em;' +
-                '\n\tfont-weight: bold;' +
-                '\n\tpadding: 12px 27px;' +
-                '\n\ttext-shadow: 0 0px 1px #333;' +
-                '\n}' +
-                '\n.btn:hover {' +
-                '\n\tbox-shadow: 0 1px 3px #333,' +
-                '\n\t\tinset 0 1px 2px #fff;' +
-                '\n}' +
-                '\n.btn:active {' +
-                '\n\tbox-shadow: 0 1px 2px #fff,' +
-                '\n\tinset 0 1px 2px #999;' +
-                '\n\tbackground-image: -webkit-linear-gradient(bottom, #77bfed, #4baae6);' +
-                '\n\tbackground-image: linear-gradient(to top, #77bfed, #4baae6);' +
-                '\n}');
+                '\r\n\tcolor: #fff;' +
+                '\r\n\tbackground-color: #37a1e4;' +
+                '\r\n\tbackground-image: -webkit-linear-gradient(top, #77bfed, #4baae6);' +
+                '\r\n\tbackground-image: linear-gradient(to bottom, #77bfed, #4baae6);' +
+                '\r\n\tborder: ' + this.bw + 'px solid #3181b4;' +
+                '\r\n\tborder-radius: ' + this.br + 'px;' +
+                '\r\n\tbox-shadow: 0 1px 2px #999,' +
+                '\r\n\t\tinset 0 1px 2px #fff;' +
+                '\r\n\tdisplay: block;' +
+                '\r\n\tfont-size: .875em;' +
+                '\r\n\tfont-weight: bold;' +
+                '\r\n\tpadding: 12px 27px;' +
+                '\r\n\ttext-shadow: 0 0px 1px #333;' +
+                '\r\n}' +
+                '\r\n.btn:hover {' +
+                '\r\n\tbox-shadow: 0 1px 3px #333,' +
+                '\r\n\t\tinset 0 1px 2px #fff;' +
+                '\r\n}' +
+                '\r\n.btn:active {' +
+                '\r\n\tbox-shadow: 0 1px 2px #fff,' +
+                '\r\n\tinset 0 1px 2px #999;' +
+                '\r\n\tbackground-image: -webkit-linear-gradient(bottom, #77bfed, #4baae6);' +
+                '\r\n\tbackground-image: linear-gradient(to top, #77bfed, #4baae6);' +
+                '\r\n}');
         }
 
 
