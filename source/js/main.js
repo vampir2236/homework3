@@ -154,6 +154,8 @@
                 '\n\tbackground-image: linear-gradient(to top, #77bfed, #4baae6);' +
                 '\n}');
         }
+
+
     };
 
     app.init();
