@@ -161,6 +161,7 @@ textarea {
   font-weight: bold;
   margin: 0 auto;
   max-width: 100%;
+  overflow: hidden;
   padding: 12px 27px;
   text-shadow: 0 0px 1px #333;
 }
@@ -203,9 +204,22 @@ textarea {
   width: 45.833%;
 }
 .output__email {
-  clear: both;
   margin: 0 auto 3.260%;
   width: 47.826%;
+}
+.output__msg {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #999;
+  color: #384;
+  display: none;
+  margin: 0 auto 3.260%;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+.output__msg--error {
+  color: #c34;
 }
 .output__submit {
   background-color: #3b8e31;
@@ -232,6 +246,12 @@ textarea {
                         inset 0 1px 2px #999;
   background-image: -webkit-linear-gradient(bottom, #93cb8b, #60b355);
   background-image: linear-gradient(to top, #93cb8b, #60b355);
+}
+.output__submit[disabled] {
+  background-image: -webkit-linear-gradient(top, #cccccc, #999999);
+  background-image: linear-gradient(to bottom, #cccccc, #999999);
+  border: 1px solid #888;
+  box-shadow: 0 1px 2px #999;
 }
 /* адаптив */
 @media only screen and (max-width: 768px) {

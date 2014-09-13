@@ -194,9 +194,24 @@ textarea {
     }
 
     &__email {
-        clear: both;
         margin: 0 auto 3.260%;
         width: 47.826%;
+    }
+
+    &__msg {
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 2px #999;
+        color: #384;
+        display: none;
+        margin: 0 auto 3.260%;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__msg--error {
+        color: #c34;
     }
 
     &__submit {
@@ -223,6 +238,12 @@ textarea {
             box-shadow: 0 1px 2px #fff,
                         inset 0 1px 2px #999;
             background-image: linear-gradient(to top, #93cb8b, #60b355);
+        }
+
+        &[disabled] {
+            background-image: linear-gradient(to bottom, #ccc, #999);
+            border: 1px solid #888;
+            box-shadow: 0 1px 2px #999;
         }
     }
 }

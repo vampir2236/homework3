@@ -4,21 +4,25 @@
 
     var app = {
 
+
         /* константы */
         MAX_BORDER_RADIUS: 20,
         MAX_BORDER_WIDTH: 10,
 
+
         /* переменные */
-        $borderRadius: $('#js-border-radius'),
-        $borderWidth: $('#js-border-width'),
-        $btnText: $('#js-btn-text'),
-        $resultBtn: $('#js-result-btn'),
-        $form: $('#js-form'),
-        $outputHTML: $('#js-output-html'),
-        $outputCSS: $('#js-output-css'),
-        $outputEmail: $('#js-email'),
+        $borderRadius: $('.js-border-radius'),
+        $borderWidth: $('.js-border-width'),
+        $btnText: $('.js-btn-text'),
+        $resultBtn: $('.js-result-btn'),
+        $form: $('.js-form'),
+        $outputHTML: $('.js-output-html'),
+        $outputCSS: $('.js-output-css'),
+        $outputEmail: $('.js-email'),
+        $outputMsg: $('.js-output-msg'),
         br: 0,
         bw: 0,
+
 
         /* инициализация объекта*/
         init: function () {
@@ -44,13 +48,16 @@
             this.$btnText.trigger('change');
         },
 
+
         /* обработчики событий */
         setUpListeners: function () {
             this.$form.on('submit', $.proxy(this.submitForm, this));
             this.$borderRadius.on('slidechange', $.proxy(this.changeBorderRadius, this));
             this.$borderWidth.on('slidechange', $.proxy(this.changeBorderWidth, this));
             this.$btnText.on('change keyup input', $.proxy(this.changeButtonText, this));
+            this.$outputEmail.on('change keyup input', $.proxy(this.hideMsg, this));
         },
+
 
         /* методы */
         submitForm: function (event) {
@@ -58,47 +65,61 @@
                 str = this.$form.serialize();
 
             event.preventDefault();
-            if (!this.$outputEmail.val().trim()) {
-                alert('Введите почту.');
+            this.hideMsg();
+
+            if (!/.+@.+\..+/.test(this.$outputEmail.val())) {
+                this.showMsg('Адрес почты введён неверно.', true);
                 return;
             }
 
-            $submitBtn.attr('disabled');
-            
+            $submitBtn.attr('disabled', 'disabled');
+
             $.ajax({
                 url: 'php/sendmail.php',
                 type: 'POST',
+                context: this,
                 data: str
             })
-            .done(function (data) {
-                console.log(data);
-            })
-            .fail(function (data) {
-                console.log(data);
-            })
-            .always(function () {
-                $submitBtn.removeAttr('disabled');
-            });
+                .done(function (data) {
+                    this.showMsg('Сообщение отправлено.');
+                })
+                .fail(function (data) {
+                    this.showMsg('Возникла ошибка! Сообщение не было отправлено.', true);
+                })
+                .always(function () {
+                    $submitBtn.removeAttr('disabled');
+                });
         },
 
         changeBorderRadius: function (event) {
             this.br = this.$borderRadius.find(':first-child').width() / this.$borderRadius.width() * this.MAX_BORDER_RADIUS ^ 0;
-            event.preventDefault();
             this.$resultBtn.css('border-radius', this.br + 'px');
             this.generateCSS();
         },
 
         changeBorderWidth: function (event) {
             this.bw = this.$borderWidth.find(':first-child').width() / this.$borderWidth.width() * this.MAX_BORDER_WIDTH ^ 0;
-            event.preventDefault();
             this.$resultBtn.css('border-width', this.bw + 'px');
             this.generateCSS();
         },
 
         changeButtonText: function (event) {
-            event.preventDefault();
             this.$resultBtn.text(this.$btnText.val());
             this.generateHTML();
+        },
+
+        hideMsg: function () {
+            this.$outputMsg.hide();
+        },
+
+        showMsg: function (msg, isError) {
+            if (!isError) {
+                this.$outputMsg.removeClass('output__msg--error');
+            } else {
+                this.$outputMsg.addClass('output__msg--error');
+            }
+
+            this.$outputMsg.text(msg).show();
         },
 
         generateHTML: function () {

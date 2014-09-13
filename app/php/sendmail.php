@@ -49,7 +49,6 @@ $mail->MsgHTML($body);
 /* отправка почты */
 if(!$mail->send()) {
     echo 'Сообщение не было отправлено.';
-    echo 'Ошибка: ' . $mail->ErrorInfo;
     http_response_code(500);
 } else {
     echo 'Сообщение успешно отправлено.';
