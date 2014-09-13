@@ -210,6 +210,7 @@ textarea {
 .output__msg {
   background-color: #f9f9f9;
   border-radius: 5px;
+  border: 1px solid #ddd;
   box-shadow: 0 0 2px #999;
   color: #384;
   display: none;
