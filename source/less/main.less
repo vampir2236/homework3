@@ -27,6 +27,7 @@ textarea {
     color: #727272;
     display: block;
     font-size: .75em;
+    outline: none;
     padding: 4px;
 }
 
@@ -103,24 +104,90 @@ textarea {
     height: 9px;
     margin-top: 2.5%;
     position: relative;
+
+    &-range {
+        background-color: #2b91d8;
+        background-image: linear-gradient(to bottom, #3a98d9, #2a88c9);
+        .vertical-gradient-ie(#3a98d9, #2a88c9);
+
+        border: 1px solid #1f5b85;
+        border-radius: 30px;
+        height: 100%;
+    }
+
+    &-handle {
+        background-image: url(../img/slider-handle.png);
+        cursor: pointer;
+        display: block;
+        height: 23px;
+        margin-left: -15px;
+        outline: none;
+        position: absolute;
+        top: -8px;
+        width: 23px;
+
+        &:hover, &:active {
+            outline: none;
+        }
+    }
 }
 
-.ui-slider-range {
-    background-color: #2b91d8;
-    background-image: linear-gradient(to bottom, #3a98d9, #2a88c9);
-    border: 1px solid #1f5b85;
-    border-radius: 30px;
-    height: 100%;
+
+/*тултип js*/
+.ui-tooltip {
+    background: #666;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+    max-width: 250px;
+    width: 100%;
+
+    &-content {
+        position: relative;
+        padding: 1em;
+        text-align: center;
+
+        &:before {
+            border-color: #666 transparent;
+            border-style: solid;
+            border-width: 10px 10px 0;
+            bottom: -10px;
+            content: '';
+            display: block;
+            left: 120px;
+            position: absolute;
+            width: 0;
+        }
+    }
 }
 
-.ui-slider-handle {
-    background-image: url(../img/slider-handle.png);
-    display: block;
-    height: 23px;
-    margin-left: -15px;
+.error.ui-tooltip {
+    background: #b77;
+    cursor: pointer;
+
+    .ui-tooltip-content:before {
+        border-color: #b77 transparent;
+    }
+}
+
+.success.ui-tooltip {
+    background: #7b7;
+
+    .ui-tooltip-content:before {
+        border-color: #7b7 transparent;
+    }
+}
+
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
     position: absolute;
-    top: -8px;
-    width: 23px;
+    width: 1px;
 }
 
 
@@ -128,8 +195,9 @@ textarea {
 .result {
     border-left: 1px solid #a1a1a1;
     float: left;
-    min-height: 235px;
+    //min-height: 235px;
     padding: 0 6.993% 6.993%;
+    text-align: center;
     width: 50%;
 
     &__title {
@@ -142,28 +210,35 @@ textarea {
         color: #fff;
         background-color: #37a1e4;
         background-image: linear-gradient(to bottom, #77bfed, #4baae6);
+        .vertical-gradient-ie(#77bfed, #4baae6);
+
         border: 1px solid #3181b4;
         border-radius: 5px;
         box-shadow: 0 1px 2px #999,
                     inset 0 1px 2px #fff;
-        display: block;
+        display: inline-block;
         font-size: .875em;
         font-weight: bold;
         margin: 0 auto;
         max-width: 100%;
         overflow: hidden;
+        outline: none;
         padding: 12px 27px;
         text-shadow: 0 0px 1px #333;
-
+        
         &:hover {
             box-shadow: 0 1px 3px #333,
                     inset 0 1px 2px #fff;
+            outline: none;
         }
 
         &:active {
             box-shadow: 0 1px 2px #fff,
                         inset 0 1px 2px #999;
             background-image: linear-gradient(to top, #77bfed, #4baae6);
+            .vertical-gradient-ie(#4baae6, #77bfed);
+
+            outline: none;
         }
     }
 }
@@ -178,6 +253,7 @@ textarea {
 
     &__form {
         margin: 0 25.531%;
+        text-align: center;
     }
 
     &__wrap {
@@ -198,51 +274,43 @@ textarea {
         width: 47.826%;
     }
 
-    &__msg {
-        background-color: #f9f9f9;
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        box-shadow: 0 0 2px #999;
-        color: #384;
-        display: none;
-        margin: 0 auto 3.260%;
-        padding: 10px;
-        text-align: center;
-        width: 100%;
-    }
-
-    &__msg--error {
-        color: #c34;
-    }
-
     &__submit {
         background-color: #3b8e31;
         background-image: linear-gradient(to bottom, #93cb8b, #60b355);
+        .vertical-gradient-ie(#93cb8b, #60b355);
+
         border: 1px solid #3b8e31;
         border-radius: 30px;
         box-shadow: 0 1px 2px #999,
                     inset 0 1px 2px #fff;
         color: #fff;
-        display: block;
+        display: inline-block;
         font-size: .875em;
         font-weight: bold;
         margin: 0 auto;
+        outline: none;
         padding: 8px 30px;
         text-shadow: 0 0px 1px #333;
 
         &:hover {
             box-shadow: 0 1px 3px #333,
                     inset 0 1px 2px #fff;
+            outline: none;
         }
 
         &:active {
             box-shadow: 0 1px 2px #fff,
                         inset 0 1px 2px #999;
             background-image: linear-gradient(to top, #93cb8b, #60b355);
+            .vertical-gradient-ie(#60b355, #93cb8b);
+
+            outline: none;
         }
 
         &[disabled] {
             background-image: linear-gradient(to bottom, #ccc, #999);
+            .vertical-gradient-ie(#ccc, #999);
+
             border: 1px solid #888;
             box-shadow: 0 1px 2px #999;
         }
