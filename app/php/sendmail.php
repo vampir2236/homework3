@@ -3,7 +3,7 @@
 require '../../vendor/autoload.php';
 
 
-$title = 'Исходный код вашей кнопки';
+$title = 'The source code of your button';
 $email = $_POST['email'];
 $html = htmlspecialchars($_POST['html']);
 $css = htmlspecialchars($_POST['css']);
@@ -48,10 +48,10 @@ $mail->MsgHTML($body);
 
 /* отправка почты */
 if(!$mail->send()) {
-    echo 'Сообщение не было отправлено.';
+    echo 'Message was not sent.';
     http_response_code(500);
 } else {
-    echo 'Сообщение успешно отправлено.';
+    echo 'Message has been sent successfully.';
 }
 
 ?>
