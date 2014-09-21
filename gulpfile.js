@@ -46,7 +46,9 @@
 
     /* js */
     gulp.task('js', function () {
-        gulp.src(['./bower_components/jquery-placeholder/jquery.placeholder.js',
+        gulp.src(['./bower_components/jquery/dist/jquery.js',
+                  './bower_components/jqueryui/jquery-ui.js',
+                  './bower_components/jquery-placeholder/jquery.placeholder.js',
                 './source/js/main.js'])
             .pipe(concat('all.js'))
             .pipe(uglify())
