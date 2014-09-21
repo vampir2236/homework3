@@ -30,6 +30,10 @@
     }
 }
 
+.vertical-gradient-ie(@from: #000000, @to: #ffffff) {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@from, endColorstr=@to, GradientType=0);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@from, endColorstr=@to, GradientType=0);
+}
 
 .inlineblock {
     display: inline-block;
